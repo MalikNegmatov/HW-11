@@ -69,6 +69,30 @@ public class Main {
     }
     public static void task2() {
         System.out.println("Задача №2");
-        Library myLibrary = new Library(15);
+        Library myLibrary = new Library(5);
+
+        myLibrary.addBook(warAndPeace);
+        myLibrary.addBook(testBook);
+        myLibrary.addBook(theatricalNovel);
+        Author author = new Author("Лев Николаевич Толстой");
+        Book book = new Book("Анна Каренина", author, 1875);
+        myLibrary.addBook(book);
+        book = new Book("Воскресение", author, 1899);
+        myLibrary.addBook(book);
+        book = new Book("Декабристы", author, 1884);
+        myLibrary.addBook(book);
+
+        myLibrary.replaceBook(book,3);
+        System.out.println();
+
+        myLibrary.printLibrary();
+        System.out.println();
+
+        myLibrary.replaceYear(theatricalNovel.getTitle(),1936);
+        System.out.println();
+        myLibrary.printLibrary();
+        System.out.println();
+
+        myLibrary.replaceYear("Воскрес",1936);
     }
 }

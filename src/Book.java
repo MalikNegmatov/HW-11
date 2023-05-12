@@ -57,7 +57,7 @@ public class Book {
      * @return строка составленная из значений полей объекта библиографической ссылки.
      */
     public String citeBook() {
-        return "\"" + this.title + "\" // " + this.author.fullName() + ", " + this.year + " г.";
+        return "\"" + this.title + ": " + this.author.fullName() + ": " + this.year + "\";";
     }
 
 }
