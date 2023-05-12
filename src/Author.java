@@ -9,9 +9,9 @@ public class Author {
     /* Безусловная инициализация полей по умолчанию. При создании объекту всегда
       присваивается имя автора "Иван" + "Николаевич" + "Бездомный". */
     {
-        firstName = "Иван"; //
-        middleName = "Николаевич";
-        lastName = "Бездомный";
+        firstName = "Иван"; // Имя
+        middleName = "Николаевич"; // Отчество
+        lastName = "Бездомный"; // Фамилия
     }
 
     /**
@@ -25,8 +25,32 @@ public class Author {
         this.lastName = lastName;
     }
 
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getMiddleName() {
+        return this.middleName;
+    }
+
+    public String getLastName(){
+        return this.lastName;
+    }
+
+    public String setFirstName(String firstName){
+        return this.firstName = firstName;
+    }
+
+    public String setMiddleName(String middleName){
+        return this.middleName = middleName;
+    }
+
+    public String setLastName (String lastName){
+        return this.lastName = lastName;
+    }
+
     /**
-     * Метод геттер полного имени Автора
+     * Метод склеивания в строку полного имени Автора
      * @return строка составленная из значений полей объекта разделенных пробелом.
      */
     public String fullName() {
