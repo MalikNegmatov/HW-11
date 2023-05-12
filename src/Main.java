@@ -1,8 +1,11 @@
 public class Main {
 
+    public static Book testBook = new Book(), warAndPeace, theatricalNovel;
     public static void main(String[] args) {
-        // Задачи блока Методы
+        // Задачи блока Объекты и классы
         task1();
+        // Дополнительная задача блока Объекты и классы
+        task2();
     }
 
     public static void printAuthor(String author) {
@@ -36,7 +39,6 @@ public class Main {
         System.out.println(cite);
     }
     public static void testBook() {
-        Book testBook = new Book();
         printBook(testBook);
         testBook.setTile("Too True To Be Good");
         Author shaw = new Author("George Bernard Shaw");
@@ -47,12 +49,14 @@ public class Main {
         Author levTolstoy = new Author("Лев", "Николаевич", "Толстой");
         Author mikhailBulgakov = new Author("Михаил Афанасьевич Булгаков");
 
-        Book warAndPeace = new Book("Война и мир", levTolstoy, 1867);
+        warAndPeace = new Book("Война и мир", levTolstoy, 1867);
         printBook(warAndPeace.citeBook());
         Author whoIs = warAndPeace.getAuthor();
         printAuthor(whoIs);
 
-        Book theatricalNovel = new Book("Театральный роман", mikhailBulgakov, 1936);
+        theatricalNovel = new Book("Театральный роман", mikhailBulgakov, 1936);
+        printBook(theatricalNovel.citeBook());
+        theatricalNovel.setYear(1967);
         printBook(theatricalNovel.citeBook());
     }
 
@@ -62,5 +66,9 @@ public class Main {
         System.out.println();
         testBook();
         System.out.println();
+    }
+    public static void task2() {
+        System.out.println("Задача №2");
+        Library myLibrary = new Library(15);
     }
 }
