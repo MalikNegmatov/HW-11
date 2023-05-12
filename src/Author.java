@@ -9,20 +9,32 @@ public class Author {
     /* Безусловная инициализация полей по умолчанию. При создании объекту всегда
       присваивается имя автора "Иван" + "Николаевич" + "Бездомный". */
     {
-        firstName = "Иван"; // Имя
-        middleName = "Николаевич"; // Отчество
-        lastName = "Бездомный"; // Фамилия
+        firstName = "Иван";
+        middleName = "Николаевич";
+        lastName = "Бездомный";
     }
 
     /**
      * Конструктор класса
      * @param firstName - имя Автора
+     * @param middleName - отчество Автора
      * @param lastName - фамилия Автора
      */
     Author(String firstName, String middleName, String lastName) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
+    }
+
+    /**
+     * Конструктор класса
+     * @param fullName - полное имя Автора в формате ФИО с разделяющими их пробелами.
+     */
+    Author(String fullName){
+        String[] names = fullName.split(" ");
+        this.firstName = names[0];
+        this.middleName = names[1];
+        this.lastName = names[2];
     }
 
     public String getFirstName() {
@@ -37,16 +49,16 @@ public class Author {
         return this.lastName;
     }
 
-    public String setFirstName(String firstName){
-        return this.firstName = firstName;
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
     }
 
-    public String setMiddleName(String middleName){
-        return this.middleName = middleName;
+    public void setMiddleName(String middleName){
+        this.middleName = middleName;
     }
 
-    public String setLastName (String lastName){
-        return this.lastName = lastName;
+    public void setLastName (String lastName){
+        this.lastName = lastName;
     }
 
     /**
@@ -59,11 +71,4 @@ public class Author {
         return name;
     }
 
-    /**
-     * Метод вывода в консоль полного имени автора
-     */
-    public void printName() {
-        String toPrint = fullName();
-        System.out.println(toPrint);
-    }
 }
